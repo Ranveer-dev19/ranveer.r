@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranveer | Developer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Orbitron',sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+overflow-x:hidden;
+}
+
+/* PARTICLE BACKGROUND */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background-image:radial-gradient(#00f7ff 1px, transparent 1px);
+background-size:40px 40px;
+animation:moveBg 20s linear infinite;
+opacity:0.1;
+z-index:-1;
+}
+
+@keyframes moveBg{
+from{background-position:0 0;}
+to{background-position:1000px 1000px;}
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+padding:20px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+text-align:center;
+z-index:1000;
+}
+
+nav a{
+color:white;
+margin:0 20px;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00f7ff;
+text-shadow:0 0 10px #00f7ff;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+background:linear-gradient(90deg,#00f7ff,#00ff88);
+-webkit-background-clip:text;
+color:transparent;
+animation:glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #00f7ff;}
+to{text-shadow:0 0 25px #00ff88;}
+}
+
+.typing{
+margin-top:20px;
+font-size:22px;
+border-right:3px solid #00f7ff;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:typing 4s steps(30,end) forwards, blink 0.8s infinite;
+}
+
+@keyframes typing{
+to{width:400px;}
+}
+
+@keyframes blink{
+50%{border-color:transparent;}
+}
+
+/* SECTION */
+.section{
+padding:120px 20px;
+text-align:center;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.section.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* CARD */
+.card{
+background:#1a1a1a;
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(0,255,255,0.2);
+max-width:900px;
+margin:auto;
+transition:0.4s;
+}
+
+.card:hover{
+box-shadow:0 0 40px #00f7ff;
+}
+
+/* SKILLS */
+.skill{
+margin:25px 0;
+text-align:left;
+}
+
+.skill-bar{
+background:#333;
+height:10px;
+border-radius:20px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:10px;
+background:linear-gradient(90deg,#00f7ff,#00ff88);
+width:0;
+transition:2s;
+}
+
+/* GALLERY */
+.gallery{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+margin-top:20px;
+}
+
+.gallery img{
+width:250px;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #00f7ff;
+}
+
+/* CONTACT BUTTON */
+button{
+margin-top:20px;
+padding:12px 30px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#00f7ff,#00ff88);
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+background:#111;
+margin-top:50px;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+<h1>Namaste 🙏 I'm Ranveer</h1>
+<div class="typing">Student | Future Software Developer | Tech Explorer</div>
+</div>
+
+<div id="about" class="section">
+<div class="card">
+<h2>About Ranveer</h2>
+<br>
+<p>
+Ranveer is an ambitious and forward-thinking student passionate about technology and innovation.
+He constantly improves his skills and builds real-world projects.
+</p>
+<br>
+<p>
+His dedication, discipline, and strong mindset drive him toward becoming a professional software developer.
+</p>
+</div>
+</div>
+
+<div id="skills" class="section">
+<div class="card">
+<h2>Skills</h2>
+
+<div class="skill">
+<p>HTML</p>
+<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<p>Problem Solving</p>
+<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+</div>
+
+</div>
+</div>
+
+<div id="gallery" class="section">
+<div class="card">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+</div>
+</div>
+</div>
+
+<div id="contact" class="section">
+<div class="card">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:ranveerthakur890@gmail.com" style="color:#00f7ff;">ranveerthakur890@gmail.com</a></p>
+<button onclick="alert('Welcome to Ranveer Portfolio 🚀')">Say Hello</button>
+</div>
+</div>
+
+<footer>
+© 2026 Ranveer | Dark Animated Developer Portfolio
+</footer>
+
+<script>
+
+/* Scroll Reveal Animation */
+window.addEventListener("scroll", function(){
+let sections = document.querySelectorAll(".section");
+sections.forEach(sec=>{
+let top = window.scrollY;
+let offset = sec.offsetTop - 500;
+if(top > offset){
+sec.classList.add("active");
+}
+});
+});
+
+</script>
+
+</body>
+</html>
